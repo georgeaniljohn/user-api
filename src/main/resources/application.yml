@@ -1,0 +1,40 @@
+spring:
+    application:
+        name: user-api
+    cache:
+        cache-names: user
+        caffeine:
+            spec: maximumSize=500,expireAfterWrite=60s
+
+server:
+    port: 8080
+    compression:
+        enabled: true
+        mime-types: text/html,text/xml,text/plain,text/css,text/javascript,application/javascript,application/json,image/svg+xml
+
+logging:
+    level:
+        root: WARN
+        de.firma.user: DEBUG
+
+user:
+    importer:
+        connectionTimeoutInMillis: 5000
+        readTimeoutInMillis: 5000
+        writeTimeoutInMillis: 5000
+        responseTimeoutInMillis: 5000
+        baseUrl: https://jsonplaceholder.typicode.com
+
+
+---
+
+spring:
+    config:
+        activate:
+            on-profile: production
+
+
+logging:
+    level:
+        root: WARN
+        de.firma.user: INFO
