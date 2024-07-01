@@ -1,7 +1,7 @@
 = User API
 
 == Introduction
-This is a simple springboot application to demonstrate two async calls made and merge the result.
+This is a simple springboot application to demonstrate two async calls made to a remote server and merge the results.
 The documentation explains how to use the API.
 
 == Requirements
@@ -66,3 +66,11 @@ Sample Response
   ]
 }
 ----
+
+== HTTP Response Codes:
+|====
+|Code | Description
+|200| All okay
+|500| Something went wrong. Since we do not know response codes send by remote server, any error is considered as
+server side error.
+|====
